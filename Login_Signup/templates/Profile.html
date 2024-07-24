@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container p-5 text-light">
+    <div class="row text-center" >
+        <h2 class="display-4">Profile</h2>
+    </div>
+    
+    <div class="row col-md-12 p-5  justify-content-center align-items-center " >
+        <div class="col col-md-7">
+            <div class="p-4 bg-white text-dark rounded" style="height:fit-content; width:fit-content">
+                <h5>welcome {{user.username}} !!</h5>
+                <h5>Email:- {{user.email}}</h5>
+                <hr>
+                <p>Joined Date - {{profile.created_at.date}}</p>
+                <p>Last Active Date - {{profile.last_active}}</p>
+                <a href="{% url "home" %}" class="btn btn-info" >Home</a>
+                <br>
+                <br>
+                <a href="{% url "logout" %}" class="btn btn-danger" >logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
